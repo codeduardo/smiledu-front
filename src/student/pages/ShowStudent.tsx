@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { apiStudent } from "../../api";
 import { AddPayment } from "../components/AddPayment";
+import { Page404 } from "../../pages/Page404";
 
 interface StudentProps {
   id_user: number;
@@ -15,11 +16,12 @@ export const ShowStudent = () => {
   const [loading, setLoading] = useState<boolean>(false);
   useEffect(() => {
     (async () => {
+      if (!Number(id)) return;
       const response = await apiStudent.getById(Number(id), setLoading);
       setStudent(response);
     })();
   }, [loading]);
-  if (!student) return <>Loader</>;
+  if (!student) return <Page404 />;
   return (
     <>
       <span onClick={() => navigate("/")} className="button__back">
