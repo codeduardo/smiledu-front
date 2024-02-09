@@ -24,7 +24,7 @@ El proyecto tiene las siguientes funcionalidades:
 1. Clona este repositorio en tu máquina local:
 
 ```bash
-git clone https://github.com/tu-usuario/prueba-tecnica-react-crud.git
+git clone https://github.com/codeduardo/smiledu-front.git
 ```
 
 2. Instala dependencias
